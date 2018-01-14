@@ -43,7 +43,7 @@ public class ResultsPopupFormController extends PopupControllerImpl {
         boolean valid = false;
         try {
             result = Integer.parseInt(resultTextField.getText());
-            valid = true;
+            valid = (result > 0);
         } catch (NumberFormatException e) {
             e.printStackTrace();
         }

@@ -40,7 +40,7 @@ public class RecordPopupFormController extends PopupControllerImpl {
         boolean valid = false;
         try {
             value = Integer.parseInt(valueTextField.getText());
-            valid = true;
+            valid = (value > 0);
         } catch (NumberFormatException e) {
             e.printStackTrace();
         }
