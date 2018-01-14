@@ -2,7 +2,6 @@ package com.sport.controller.results;
 
 import com.sport.controller.PopupControllerImpl;
 import com.sport.dao.impl.AthleteDAO;
-import com.sport.dao.impl.CompetitionDAO;
 import com.sport.dao.impl.ParticipateDAO;
 import com.sport.model.Athlete;
 import com.sport.model.Competition;
@@ -19,7 +18,8 @@ import java.time.ZoneId;
 import java.util.List;
 
 public class ResultsPopupFormController extends PopupControllerImpl {
-    private LocalDate todayDate = null;
+    private final int AGELIMIT = 18;
+    private LocalDate DATELIMIT = null;
 
     private Competition competition = null;
     private Participate participate = null;
@@ -58,9 +58,9 @@ public class ResultsPopupFormController extends PopupControllerImpl {
                 "Ошибка!",
                 "Выберите спортсмена!"
         );
-        else if (athlete.getBirth().toLocalDate().isAfter(todayDate)) alert(
+        else if (athlete.getBirth().toLocalDate().isAfter(DATELIMIT)) alert(
                 "Ошибка!",
-                "Спортсмен не может быть моложе 18 лет!"
+                "Спортсмен не может быть моложе " + AGELIMIT + " лет!"
         );
         else if (!valid) alert(
                 "Ошибка!",
@@ -97,8 +97,8 @@ public class ResultsPopupFormController extends PopupControllerImpl {
 
     @Override
     public void loadView() {
-        todayDate = new java.util.Date().toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
-        todayDate = todayDate.minusYears(18);
+        DATELIMIT = new java.util.Date().toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+        DATELIMIT = DATELIMIT.minusYears(AGELIMIT);
     }
 
     @Override

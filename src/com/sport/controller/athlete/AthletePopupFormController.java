@@ -14,7 +14,8 @@ import java.time.LocalDate;
 import java.time.ZoneId;
 
 public class AthletePopupFormController extends PopupControllerImpl {
-    private LocalDate todayDate = null;
+    private final int AGELIMIT = 18;
+    private LocalDate DATELIMIT = null;
 
     private Athlete athlete = null;
     private boolean edit = false;
@@ -61,9 +62,9 @@ public class AthletePopupFormController extends PopupControllerImpl {
             getParent().updateView();
             close();
 
-            if (localDate.isAfter(todayDate)) alert(
+            if (localDate.isAfter(DATELIMIT)) alert(
                     "Внимание!",
-                    "Спортсмен моложе 18 лет!"
+                    "Спортсмен моложе " + AGELIMIT + " лет!"
             );
         }
     }
@@ -84,8 +85,8 @@ public class AthletePopupFormController extends PopupControllerImpl {
 
     @Override
     public void loadView() {
-        todayDate = new java.util.Date().toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
-        todayDate = todayDate.minusYears(18);
+        DATELIMIT = new java.util.Date().toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+        DATELIMIT = DATELIMIT.minusYears(AGELIMIT);
     }
 
     @Override
