@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="connection.url">jdbc:mysql://localhost:3306/sport?useUnicode=true&amp;useJDBCCompliantTimezoneShift=true&amp;useLegacyDatetimeCode=false&amp;serverTimezone=Europe/Moscow</property>
+        <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+
+        <property name="connection.username">root</property>
+        <property name="connection.password"></property>
+
+        <property name="hibernate.show_sql">true</property>
+        <property name="hibernate.format_sql">true</property>
+        <property name="hibernate.enable_lazy_load_no_trans">true</property>
+
+        <property name="hibernate.connection.CharSet">utf8</property>
+
+        <!-- DB schema will be updated if needed -->
+        <!--<property name="hbm2ddl.auto">update</property>-->
+
+        <mapping class="com.sport.model.Athlete"/>
+        <mapping class="com.sport.model.Competition"/>
+        <mapping class="com.sport.model.Participate"/>
+        <mapping class="com.sport.model.Sport"/>
+        <mapping class="com.sport.model.SportTeam"/>
+        <mapping class="com.sport.model.TeamMembership"/>
+        <mapping class="com.sport.model.Unit"/>
+        <mapping class="com.sport.model.WorldRecord"/>
+    </session-factory>
+</hibernate-configuration>

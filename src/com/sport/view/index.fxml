@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1">
+  <tabs>
+      <Tab text="Спортсмены">
+         <content>
+             <fx:include source="athlete.fxml"/>
+         </content>
+      </Tab>
+      <Tab text="Виды спорта">
+          <content>
+              <fx:include source="sport.fxml"/>
+          </content>
+      </Tab>
+      <Tab text="Соревнования">
+          <content>
+              <fx:include source="competition.fxml"/>
+          </content>
+      </Tab>
+      <Tab text="Результаты">
+          <content>
+              <fx:include source="results.fxml"/>
+          </content>
+      </Tab>
+      <Tab text="Мировые рекорды">
+          <content>
+              <fx:include source="record.fxml"/>
+          </content>
+      </Tab>
+      <Tab text="Единицы измерения">
+          <content>
+              <fx:include source="unit.fxml"/>
+          </content>
+      </Tab>
+  </tabs>
+</TabPane>

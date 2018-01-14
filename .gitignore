@@ -1,0 +1,6 @@
+$ cat .gitignore
+
+/.idea
+SPORTAPP.iml
+/lib
+/out
