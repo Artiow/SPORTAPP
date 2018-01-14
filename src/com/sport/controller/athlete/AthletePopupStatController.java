@@ -1,12 +1,12 @@
 package com.sport.controller.athlete;
 
 import com.sport.controller.PopupControllerImpl;
-import com.sport.dao.impl.AthleteDAO;
 import com.sport.dao.impl.ParticipateDAO;
 import com.sport.dao.impl.SportDAO;
 import com.sport.model.Athlete;
 import com.sport.model.Participate;
 import com.sport.model.Sport;
+
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
